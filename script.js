@@ -7,14 +7,17 @@ const listParent = document.getElementById('listOn');
         const nameExperience = Number(form['nameExperience'].value);
         const editButton        = document.createElement('button');
         const deleteButton      = document.createElement('button');
-        const saveButton      = document.createElement('button');
+        const saveButton        = document.createElement('button');
         const list              = document.createElement('p');
         const checkBox          = document.createElement('input');
         const positiontext      = ' [Position] : ';
         const salarytext        = ' [Salaly] : ';
         const experiencetext    = ' [Experience] : ';
+        
 
         checkBox.type           = 'checkbox'
+        checkBox.id             = 'Checkbox';
+        checkBox.onclick        = checkbox_changed
         editButton.innerText    = 'Edit';
         editButton.className    = 'edit';
         editButton.onclick      = editclick;
@@ -135,4 +138,14 @@ const listParent = document.getElementById('listOn');
     
         const ableInputExperience     = document.getElementById('4');
         ableInputExperience.disabled  = 'disable';
+    }
+
+    function checkbox_changed() {
+        const checkboxItem      = document.getElementById("Checkbox");
+            console.log(checkboxItem.checked);
+        if (checkboxItem.checked==true) {
+            console.log("Check!");
+        }else{
+            console.log("Uncheck!")
+        }
     }
