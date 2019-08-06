@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Employee</title>
+    </head>
+    <body>
+        <div id="head1"><h1>Employee Management</h1></div>
+        <div id="container">
+        <form action="javascript:;" onsubmit="submitAddAccount(this)">
+            <fieldset>
+            <legend><b>Add Employee</b></legend>
+                Name : <input id="nameInput" name="fullname" />
+                Position :  
+                <select id="position" name="namePosition">
+                    <option value="Developer">Developer</option>
+                    <option value="Tester">Tester</option>
+                    <option value="System Analysis">System Analysis</option>
+                    <option value="Project Manager" selected>Project Manager</option>
+                </select><br>
+                Salary : <input id="salary" type="number" name="nameEmployeeSalary" placeholder="15000 - 100000">
+                Work-Experience : <input id="experience" type="number" name="nameExperience"><br>
+                <button id="buttonAdd" type="submit">Add</button>
+                <div id="errorMessage"></div>
+            </fieldset>
+        </form><hr>
+            
+    
+            <fieldset>
+                <legend><b>Employee On</b></legend>
+                    <ul id="listOn">
+                        <li>
+                            <input type="checkbox"> <label>John Connor [Position] : Developer [Salary] : 20000 [Experience] : 3 </label><button class="edit">Edit</button><button class="delete">Delete</button>
+                        </li>
+                    </ul>
+            </fieldset><hr>
+            
+    
+            <fieldset>
+                    <legend><b>Employee Off</b></legend>
+                    <ul id="listOff">
+                        <li>
+                            <s><input type="checkbox"> <label>Connor Mcgregor [Position] : Tester [Salary] : 18000 [Experience] : 2 </label><button class="delete">Delete</button></s>
+                        </li>
+                    </ul>
+            </fieldset>
+        </div>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+</html>
