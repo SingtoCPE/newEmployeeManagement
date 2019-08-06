@@ -9,28 +9,32 @@ const listParent = document.getElementById('listOn');
         const deleteButton      = document.createElement('button');
         const saveButton        = document.createElement('button');
         const list              = document.createElement('p');
+        list.id                 = 'p1';
         const checkBox          = document.createElement('input');
         const positiontext      = ' [Position] : ';
         const salarytext        = ' [Salaly] : ';
         const experiencetext    = ' [Experience] : ';
-        
-
+        //------------------------------------------------------
+        // checkBox.type           = 'checkbox'
+        // checkBox.id             = 'returnCheckbox';
+        // checkBox.onclick        = returnCheckbox_changed
+        //------------------------------------------------------
         checkBox.type           = 'checkbox'
         checkBox.id             = 'Checkbox';
         checkBox.onclick        = checkbox_changed
         editButton.innerText    = 'Edit';
-        editButton.className    = 'edit';
+        editButton.id           = 'edit';
         editButton.onclick      = editclick;
         editButton.type         = 'button';
 	    deleteButton.innerText  = 'Delete';
-        deleteButton.className  = 'delete';
+        deleteButton.id         = 'delete';
         deleteButton.type       = 'button';
         deleteButton.onclick    = deleteclick;
         saveButton.type         = 'button';
         saveButton.innerText    = 'Save';
-        saveButton.className    = 'save';
+        saveButton.id           = 'save';
         saveButton.onclick      = saveclick;
-        
+        //------------------------------------------------------
         const editInputName     = document.createElement('input');
         editInputName.value     = fullname;
         editInputName.disabled  = 'disable';
@@ -54,7 +58,7 @@ const listParent = document.getElementById('listOn');
         editInputExperience.disabled  = 'disable';
         editInputExperience.type      = 'number';
         editInputExperience.id        = '4';
-
+        //------------------------------------------------------
         // check fullname length
         const fullnameLength = fullname.length;
         if (fullnameLength < 2 || fullnameLength > 50) {
@@ -139,12 +143,26 @@ const listParent = document.getElementById('listOn');
         const ableInputExperience     = document.getElementById('4');
         ableInputExperience.disabled  = 'disable';
     }
-
+const newListOof = document.getElementById('listOff');
     function checkbox_changed() {
         const checkboxItem      = document.getElementById("Checkbox");
+        const newName = document.getElementById('1');
+        const newPosition = document.getElementById('2');
+        const newInputSalary = document.getElementById('3');
+        const newInputExperience = document.getElementById('4');
+        const newDelete = document.getElementById('delete');
+        
             console.log(checkboxItem.checked);
         if (checkboxItem.checked==true) {
             console.log("Check!");
+            newListOof.append(newName);
+            newListOof.append(newPosition);
+            newListOof.append(newInputSalary);
+            newListOof.append(newInputExperience);
+            newListOof.append(newDelete);
+
+
+
         }else{
             console.log("Uncheck!")
         }
